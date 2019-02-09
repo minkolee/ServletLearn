@@ -5,7 +5,15 @@
          version="4.0">
     <servlet>
         <servlet-name>firstcontact</servlet-name>
-        <servlet-class>test</servlet-class>
+        <servlet-class>MyHttpServlet</servlet-class>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql:///mydb</param-value>
+
+        </init-param>
+        <!--服务器启动就创建servlet对象-->
+        <!--数字 代表优先级,数字越小,优先级越高-->
+        <load-on-startup>3</load-on-startup>
     </servlet>
 
     <servlet-mapping>
