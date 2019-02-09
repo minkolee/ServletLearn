@@ -1,9 +1,12 @@
 import JDBCUtils.Tools;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,23 +34,34 @@ public class LoginServlet extends HttpServlet {
 
 
         try {
-            conn = Tools.getConnection() ;
+            conn = Tools.getConnection();
             String sql = "select * from users where name=? and password=?";
             PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setObject(1,name);
-            pst.setObject(2,password);
+            pst.setObject(1, name);
+            pst.setObject(2, password);
             rs = pst.executeQuery();
 
             if (rs.next()) {
                 resp.setContentType("text/html;charset=utf-8");
-                resp.getWriter().println("<h1>您好</h1>");
+//                resp.getWriter().println("<h1>您好</h1>");
+                String data = "中国";
+                OutputStream ps = resp.getOutputStream();
+                //这句话的意思，使得放入流的数据是utf8格式
+                ps.write(data.getBytes(StandardCharsets.UTF_8));
 
 
             } else {
                 resp.setContentType("text/html;charset=utf-8");
                 resp.getWriter().println("<h1>登录失败</h1>");
+                String data = "中国";
+                OutputStream ps = resp.getOutputStream();
+                //这句话的意思，使得放入流的数据是utf8格式
+                ps.write(data.getBytes(StandardCharsets.UTF_8));
 
             }
+
+
+
 
         } catch (Exception ex) {
             ex.printStackTrace();
