@@ -23,4 +23,8 @@ public class MyHttpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
     }
+
+    public static void main(String[] args) {
+        System.out.println("HEllo");
+    }
 }
