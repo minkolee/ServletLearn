@@ -1,12 +1,9 @@
-
-
 import JDBCUtils.Tools;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,9 +39,14 @@ public class LoginServlet extends HttpServlet {
             rs = pst.executeQuery();
 
             if (rs.next()) {
-                resp.getWriter().write("Login success");
+                resp.setContentType("text/html;charset=utf-8");
+                resp.getWriter().println("<h1>您好</h1>");
+
+
             } else {
-                resp.getWriter().write("Login Failed");
+                resp.setContentType("text/html;charset=utf-8");
+                resp.getWriter().println("<h1>登录失败</h1>");
+
             }
 
         } catch (Exception ex) {
