@@ -43,31 +43,21 @@ public class LoginServlet extends HttpServlet {
 
             if (rs.next()) {
                 resp.setContentType("text/html;charset=utf-8");
-//                resp.getWriter().println("<h1>您好</h1>");
-                String data = "中国";
-                OutputStream ps = resp.getOutputStream();
-                //这句话的意思，使得放入流的数据是utf8格式
-                ps.write(data.getBytes(StandardCharsets.UTF_8));
+                resp.getWriter().println("<h1>您好</h1>");
 
 
             } else {
                 resp.setContentType("text/html;charset=utf-8");
-                resp.getWriter().println("<h1>登录失败</h1>");
-                String data = "中国";
+//                resp.getWriter().println("<h1>登录失败</h1>");
+                String data = "<h1 style='color:red'>登录失败</h1>";
                 OutputStream ps = resp.getOutputStream();
                 //这句话的意思，使得放入流的数据是utf8格式
                 ps.write(data.getBytes(StandardCharsets.UTF_8));
 
             }
-
-
-
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-
     }
 
 
