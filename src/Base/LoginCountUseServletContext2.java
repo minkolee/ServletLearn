@@ -1,18 +1,10 @@
 package Base;
 
-import JDBCUtils.Tools;
-
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 /**
  * ServletContext对象,是一个web应用的环境上下文的对象,通过这个可以在不同的servlet类之间共享数据

@@ -5,7 +5,7 @@ import java.sql.*;
 public class Tools {
 
     public static Connection getConnection() {
-        Connection connection = null;
+        Connection connection;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/mydatabase?useSSL=false";
@@ -18,9 +18,6 @@ public class Tools {
         }
         return connection;
     }
-
-
-
 
     public static void slientCloseAll(Connection connection, PreparedStatement preparedStatement, ResultSet rs) {
         try {
