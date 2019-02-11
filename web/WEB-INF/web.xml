@@ -13,27 +13,39 @@
         <param-name>mywife</param-name>
         <param-value>jenny</param-value>
     </context-param>
+    <!--这是登录功能-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>firstcontact</servlet-name>-->
+        <!--<servlet-class>Base.LoginCountUseServletContext</servlet-class>-->
+        <!--&lt;!&ndash;服务器启动就创建servlet对象&ndash;&gt;-->
+        <!--&lt;!&ndash;数字 代表优先级,数字越小,优先级越高&ndash;&gt;-->
+        <!--<load-on-startup>3</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>firstcontact</servlet-name>-->
+        <!--<url-pattern>/test</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--这是给全局对象增加1的功能-->
+    <!--<servlet>-->
+        <!--<servlet-name>add1</servlet-name>-->
+        <!--<servlet-class>Base.LoginCountUseServletContext2</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>add1</servlet-name>-->
+        <!--<url-pattern>/add1</url-pattern>-->
+    <!--</servlet-mapping>-->
+    
     <servlet>
-        <servlet-name>firstcontact</servlet-name>
-        <servlet-class>LoginCountUseServletContext</servlet-class>
-        <!--服务器启动就创建servlet对象-->
-        <!--数字 代表优先级,数字越小,优先级越高-->
-        <load-on-startup>3</load-on-startup>
+        <servlet-name>response</servlet-name>
+        <servlet-class>ResponseLearn.Demo</servlet-class>
     </servlet>
-
+    
     <servlet-mapping>
-        <servlet-name>firstcontact</servlet-name>
-        <url-pattern>/test</url-pattern>
+        <servlet-name>response</servlet-name>
+        <url-pattern>/re2</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>add1</servlet-name>
-        <servlet-class>LoginCountUseServletContext2</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>add1</servlet-name>
-        <url-pattern>/add1</url-pattern>
-    </servlet-mapping>
-
+    
 </web-app>

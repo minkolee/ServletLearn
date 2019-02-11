@@ -1,3 +1,5 @@
+package Base;
+
 import JDBCUtils.Tools;
 
 import javax.servlet.ServletContext;
@@ -81,8 +83,8 @@ public class LoginCountUseServletContext extends HttpServlet {
 
 //        如果要加载classes目录下边的文件c.txt,就用当前的类来加载,然后同样可以获得该地址
         // getresource是相对classes目录
-        String url = LoginCountUseServletContext.class.getClassLoader().getResource("c.txt").getPath();
-        System.out.println(url);
+//        String url = LoginCountUseServletContext.class.getClassLoader().getResource("c.txt").getPath();
+//        System.out.println(url);
 
         // d.txt d根本没有发布到Web目录内,所以获取不到的
 
