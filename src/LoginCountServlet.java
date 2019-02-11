@@ -11,7 +11,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class LoginServlet extends HttpServlet {
+/**
+ * 如果是用单个servlet固定提过服务,则用一个静态变量也可以统计登录的用户次数.
+ *
+ */
+
+
+public class LoginCountServlet extends HttpServlet {
+
+    private static int count = 0;
+
+    private String addCount() {
+        count++;
+        return "您是第<span style='color:red'>" + count + "</span>位登录的用户.";
+    }
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1 get请求需要返回默认的用户登录页面
@@ -43,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 
             if (rs.next()) {
                 resp.setContentType("text/html;charset=utf-8");
-                resp.getWriter().println("<h1>您好,登录成功</h1>");
+                resp.getWriter().println(addCount());
 
 
             } else {

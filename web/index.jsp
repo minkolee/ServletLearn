@@ -8,12 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>第一个servlet程序</title>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
   </head>
   <body>
-  <h1>第一个servlet程序</h1>
-  <h1>第一个servlet程序</h1>
-  <h1>第一个servlet程序</h1>
-  <h1>第一个servlet程序</h1>
+  <h1 style="text-align: center;">用户登录</h1>
+  <div class="wrapper">
+    <form action="test" method="post">
+      <label>Name
+        <input type="text" name="username">
+      </label>
+      <label>Password
+        <input type="password" name="password">
+      </label>
+      <input type="submit">
+    </form>
+  </div>
   </body>
 </html>

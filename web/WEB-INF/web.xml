@@ -3,14 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!--还可以配置全局的初始化参数-->
+    <!--这里的内容会被写入ServletContext上下文对象中-->
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mywife</param-name>
+        <param-value>jenny</param-value>
+    </context-param>
     <servlet>
         <servlet-name>firstcontact</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
-        <init-param>
-            <param-name>url</param-name>
-            <param-value>jdbc:mysql:///mydb</param-value>
-
-        </init-param>
+        <servlet-class>LoginCountUseServletContext</servlet-class>
         <!--服务器启动就创建servlet对象-->
         <!--数字 代表优先级,数字越小,优先级越高-->
         <load-on-startup>3</load-on-startup>
@@ -20,6 +25,6 @@
         <servlet-name>firstcontact</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
-    
+
     
 </web-app>
