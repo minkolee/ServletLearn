@@ -24,28 +24,35 @@ import java.sql.ResultSet;
  * 还有一个重要应用是获得Web应用内所有资源的路径
  *
  *
+ *
+ * 自己试验的结果,让一个servlet对象随web应用启动,然后在init里对上下文对象设置好想要的初始值
+ *
+ * 然后其他的东西再去访问,让数据共享操作还是比较麻烦的.
+ *
  */
 
 
 public class LoginCountUseServletContext extends HttpServlet {
 
-    private ServletContext servletContext = this.getServletContext();
+    // 这里由于配置了初始化就创建servlet对象,所以会有初始的count值,假如不在服务器启动的时候就创建servlet对象,则如果用add1路径去增加,就会报空指针
+
 
     @Override
     public void init() throws ServletException {
-        servletContext.setAttribute("count", 0L);
+//
+        this.getServletContext().setAttribute("count", 0L);
     }
 
     private String addCount() {
 //        设置和获取上下文变量中的键值对
-        Long count = (long) (servletContext.getAttribute("count")) + 1;
-        servletContext.setAttribute("count", count);
+        Long count = (long) (this.getServletContext().getAttribute("count")) + 1;
+        this.getServletContext().setAttribute("count", count);
         System.out.print("当前全局变量的统计数字是: ");
-        System.out.println(servletContext.getAttribute("count"));
+        System.out.println(this.getServletContext().getAttribute("count"));
 
         //可以获得XML配置文件中的初始化参数
-        System.out.println("获取的XML配置文件中的参数是:"+ servletContext.getInitParameter("driver"));
-        System.out.println("获取的XML配置文件中的参数是:" + servletContext.getInitParameter("mywife"));
+        System.out.println("获取的XML配置文件中的参数是:"+ this.getServletContext().getInitParameter("driver"));
+        System.out.println("获取的XML配置文件中的参数是:" + this.getServletContext().getInitParameter("mywife"));
 
 
         // 获取路径,获取路径是为了可以获取对应的文件资源,用于上传下载或者程序中修改文件
@@ -54,7 +61,7 @@ public class LoginCountUseServletContext extends HttpServlet {
 
 
         // a 在web容器的根目录下
-        String path = servletContext.getRealPath("/a.txt");
+        String path = this.getServletContext().getRealPath("/a.txt");
         System.out.println(path);
 
 
@@ -62,12 +69,12 @@ public class LoginCountUseServletContext extends HttpServlet {
 
 
         //b在web-inf下边,发布时候的路径也是这里
-        path = servletContext.getRealPath("/WEB-INF/b.txt");
+        path = this.getServletContext().getRealPath("/WEB-INF/b.txt");
         System.out.println(path);
 
 
         // c 要注意,在src下边,但是发布的时候,是在web-inf的类目录下边
-        path = servletContext.getRealPath("/WEB-INF/classes/c.txt");
+        path = this.getServletContext().getRealPath("/WEB-INF/classes/c.txt");
         System.out.println(path);
 
 
@@ -75,7 +82,6 @@ public class LoginCountUseServletContext extends HttpServlet {
 //        如果要加载classes目录下边的文件c.txt,就用当前的类来加载,然后同样可以获得该地址
         // getresource是相对classes目录
         String url = LoginCountUseServletContext.class.getClassLoader().getResource("c.txt").getPath();
-
         System.out.println(url);
 
         // d.txt d根本没有发布到Web目录内,所以获取不到的
@@ -117,7 +123,6 @@ public class LoginCountUseServletContext extends HttpServlet {
             if (rs.next()) {
                 resp.setContentType("text/html;charset=utf-8");
                 resp.getWriter().println(addCount());
-
 
             } else {
                 resp.setContentType("text/html;charset=utf-8");

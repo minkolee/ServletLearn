@@ -26,5 +26,14 @@
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
 
-    
+    <servlet>
+        <servlet-name>add1</servlet-name>
+        <servlet-class>LoginCountUseServletContext2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>add1</servlet-name>
+        <url-pattern>/add1</url-pattern>
+    </servlet-mapping>
+
 </web-app>
