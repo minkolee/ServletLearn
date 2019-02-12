@@ -14,13 +14,20 @@
   <body>
   <h1 style="text-align: center;">用户登录</h1>
   <div class="wrapper">
-    <form action="test" method="post">
+    <form action="request" method="post">
       <label>Name
         <input type="text" name="username">
       </label>
       <label>Password
         <input type="password" name="password">
       </label>
+
+      <input type="checkbox" name="hobby" value="football">
+      <input type="checkbox" name="hobby" value="basketball">
+      <input type="checkbox" name="hobby" value="volleyball">
+      <input type="checkbox" name="hobby" value="gayball">
+
+
       <input type="submit">
     </form>
   </div>
