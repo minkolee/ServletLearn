@@ -52,7 +52,7 @@
     <!--上传文件-->
     <servlet>
         <servlet-name>download</servlet-name>
-        <servlet-class>ResponseLearn.DownloadDemo</servlet-class>
+        <servlet-class>authcode.check</servlet-class>
     </servlet>
     
     <servlet-mapping>
