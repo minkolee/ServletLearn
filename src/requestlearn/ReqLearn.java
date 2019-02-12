@@ -49,6 +49,10 @@ public class ReqLearn extends HttpServlet {
         req.getHeader("Accept-Language");
 
 
+        // request对象还是一个域对象,也具有setAttribute 和 getAttribute 和 removeAttribute
+        // 请求对象在返回响应之后就销毁了,那么为什么要使用request对象作为域对象呢,主要就是可以进行请求转发,转发的请求可以通过这个携带额外的数据
+        // 注意,转发请求并不是重定向,因为重定向返回了响应给客户端,而请求转发是直接转发请求给另外一个servelet
+
     }
 
     @Override

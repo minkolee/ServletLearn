@@ -69,7 +69,26 @@
         <servlet-name>request</servlet-name>
         <url-pattern>/request</url-pattern>
     </servlet-mapping>
-    
-    
-    
+
+    <servlet>
+        <servlet-name>redirect</servlet-name>
+        <servlet-class>requestlearn.Redirect</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>redirect</servlet-name>
+        <url-pattern>/redirect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>receive</servlet-name>
+        <servlet-class>requestlearn.Receive</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>receive</servlet-name>
+        <url-pattern>/receive</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
