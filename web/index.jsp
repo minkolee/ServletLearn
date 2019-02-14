@@ -24,8 +24,6 @@
       <label>Email
         <input type="email" name="email">
       </label>
-
-
       <input type="submit">
     </form>
   </div>

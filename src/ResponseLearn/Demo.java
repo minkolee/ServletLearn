@@ -39,7 +39,6 @@ public class Demo extends HttpServlet {
 //        resp.setHeader("location","/download");
 
         //设置定时跳转
-        System.out.println(resp.getBufferSize());
 
 
         //重定向的简单做法
