@@ -12,6 +12,12 @@ package Register;
  * 先来进行获取表单数据
  * <p>
  * 设计了一个用户表,里边有uuid作为用户id,还有用户名,密码和电子邮件
+ * 然后封装到一个User对象中,最后调用JDBC完成数据库操作
+ *
+ * 这里要解决的问题是中文乱码,经过测试可以知道,从POST请求里拿到数据的时候就是乱码,必须要在这一步将其转换成正确的编码
+ * 就是要指定请求的编码,这样才能取出东西来
+ *
+ *
  */
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -30,14 +36,36 @@ import java.util.UUID;
 public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //get请求重定向到index.jsp
-        resp.sendRedirect("index.jsp");
+//        测试一下GET方法的编码问题:
+//        req.setCharacterEncoding("UTF-8");
+        User user = new User();
+        try {
+
+            BeanUtils.populate(user, req.getParameterMap());
+        } catch (Exception ex) {
+            System.out.println("--------------------出现异常----------------------");
+            ex.printStackTrace();
+            System.out.println("------------------异常信息结束---------------------");
+        }
+
+        user.setUid(UUID.randomUUID().toString());
+        System.out.println("这是GET方法");
+        System.out.println(user.getUid());
+        System.out.println(user.getUsername());
+        System.out.println(user.getPassword());
+        System.out.println(user.getEmail());
+
+
 
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+//        设置编码方式只适合POST方式,不适合GET方式
+        req.setCharacterEncoding("UTF-8");
+
         // -------------------1 获取用户Post进来的数据,封装成user对象
 
         //最好将对象封装到一个Users名称的bean类中
@@ -55,6 +83,12 @@ public class Register extends HttpServlet {
         // 注意,此时只有三个参数,uid还没有着落,如果此时去获取,可以发现为null
         // 手工封装UID,使用UUID工具,就是一个随机不重复的32位字符串,生成后变成36位,所以在数据库里留够空间
         user.setUid(UUID.randomUUID().toString());
+
+        System.out.println(user.getUid());
+        System.out.println(user.getUsername());
+        System.out.println(user.getPassword());
+        System.out.println(user.getEmail());
+
 
         // -------------------2 调用操作数据库写入post数据的方法--------
 

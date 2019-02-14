@@ -8,7 +8,7 @@ public class Tools {
         Connection connection;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/mydatabase?useSSL=false";
+            String url = "jdbc:mysql://localhost:3306/mydatabase?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
             String user = "root";
             String password = "fflym0709";
             connection = DriverManager.getConnection(url, user, password);

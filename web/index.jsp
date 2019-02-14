@@ -14,7 +14,7 @@
   <body>
   <h1 style="text-align: center;">用户注册</h1>
   <div class="wrapper">
-    <form action="register" method="post">
+    <form action="register" method="get">
       <label>Name
         <input type="text" name="username">
       </label>
