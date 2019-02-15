@@ -60,45 +60,61 @@
         <!--<url-pattern>/download</url-pattern>-->
     <!--</servlet-mapping>-->
     
+    <!--<servlet>-->
+        <!--<servlet-name>request</servlet-name>-->
+        <!--<servlet-class>requestlearn.ReqLearn</servlet-class>-->
+    <!--</servlet>-->
+    <!---->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>request</servlet-name>-->
+        <!--<url-pattern>/request</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>redirect</servlet-name>-->
+        <!--<servlet-class>requestlearn.Redirect</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>redirect</servlet-name>-->
+        <!--<url-pattern>/redirect</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>receive</servlet-name>-->
+        <!--<servlet-class>requestlearn.Receive</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>receive</servlet-name>-->
+        <!--<url-pattern>/receive</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>register</servlet-name>-->
+        <!--<servlet-class>Register.Register</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>register</servlet-name>-->
+        <!--<url-pattern>/register</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+    <!--Cookie的使用-->
     <servlet>
-        <servlet-name>request</servlet-name>
-        <servlet-class>requestlearn.ReqLearn</servlet-class>
+        <servlet-name>cookie</servlet-name>
+        <servlet-class>CookieLearn.CookieDemo</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
-        <servlet-name>request</servlet-name>
-        <url-pattern>/request</url-pattern>
+        <servlet-name>cookie</servlet-name>
+        <url-pattern>/cook</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>redirect</servlet-name>
-        <servlet-class>requestlearn.Redirect</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>redirect</servlet-name>
-        <url-pattern>/redirect</url-pattern>
-    </servlet-mapping>
 
-    <servlet>
-        <servlet-name>receive</servlet-name>
-        <servlet-class>requestlearn.Receive</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>receive</servlet-name>
-        <url-pattern>/receive</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>register</servlet-name>
-        <servlet-class>Register.Register</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>register</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
 
 
 </web-app>
