@@ -112,9 +112,29 @@
         <url-pattern>/cook</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>session</servlet-name>
+        <servlet-class>SessionLearn.SessionDemo</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>session</servlet-name>
+        <url-pattern>/sess</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <servlet-name>set</servlet-name>
+        <servlet-class>SessionLearn.SetSession</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>set</servlet-name>
+        <url-pattern>/set</url-pattern>
+    </servlet-mapping>
 
+    <!--这个表示session的过期时间,用分钟表示session的过期时间-->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
 
 </web-app>

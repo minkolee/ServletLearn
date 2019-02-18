@@ -28,7 +28,7 @@ public class CookieDemo extends HttpServlet {
         // 2 写入Cookie 对象
         resp.addCookie(cookie);
 
-
+        // 3 获取Cookie,需要遍历Cookie名称
         Cookie[] cookies;
         cookies = req.getCookies();
         resp.setContentType("text/html;charset=UTF-8");
