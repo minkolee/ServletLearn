@@ -15,21 +15,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 public class CookieDemo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Cookie的基本使用
+
         System.out.println("CookieDemo启动");
         // 1 先创建一个Cookie对象,
-        Cookie cookie = new Cookie("location2","恐龙园");
+        Cookie cookie = new Cookie("lastlogin", Long.toString(System.currentTimeMillis()));
+        // 2 写入Cookie 对象
         resp.addCookie(cookie);
+
 
         Cookie[] cookies;
         cookies = req.getCookies();
-
+        resp.setContentType("text/html;charset=UTF-8");
+        boolean foundCookie = false;
         for (Cookie c : cookies) {
-            System.out.println(c.getName()+'|'+c.getValue());
+            if (c.getName().equals("lastlogin")) {
+                foundCookie = true;
+                resp.getWriter().write("您上次登录的时间是" + new Date(Long.parseLong(c.getValue())));
+            }
+        }
+
+        if (!foundCookie) {
+            resp.getWriter().write("您未登录过");
         }
 
     }
