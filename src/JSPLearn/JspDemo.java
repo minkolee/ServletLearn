@@ -27,7 +27,8 @@ import java.io.IOException;
  *
  * extends = 可以设置继承那个类,但是只能继承servlet类
  *
- *
+ * JSP的九大隐式对象，关键的是pageContext对象，可以获得其他8个隐式对象，还可以对四个域设置内容，所以一般需要使用内置对象的时候，就是要pageContext这个对象
+ * 
  *
  *
  *

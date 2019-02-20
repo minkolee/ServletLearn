@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Random" %><%--
   Created by IntelliJ IDEA.
   User: Minko
   Date: 2019/2/19
@@ -20,9 +20,20 @@
 </head>
 <body>
 <%
-    int i = 1 / 0;
+
+
+
 %>
-<h1><%="这是错误页面"%></h1>
+
+<%!
+    private int getRand100() {
+        return new Random().nextInt(100);
+    }
+%>
+
+
+<h1><%="这是测试页面,会有随机数字"+getRand100()%></h1>
+
 
 
 
