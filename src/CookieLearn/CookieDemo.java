@@ -18,6 +18,13 @@ import java.io.IOException;
 import java.util.Date;
 
 public class CookieDemo extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("这是Cookie Servlet的init函数");
+    }
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Cookie的基本使用
