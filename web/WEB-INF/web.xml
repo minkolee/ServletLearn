@@ -147,4 +147,15 @@
         <url-pattern>/goods</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>elgoods</servlet-name>
+        <servlet-class>itemlist.ListQueryEL</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>elgoods</servlet-name>
+        <url-pattern>/elgoods</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
