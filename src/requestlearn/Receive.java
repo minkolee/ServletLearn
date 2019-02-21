@@ -17,7 +17,7 @@ public class Receive extends HttpServlet {
         System.out.println(req.getRequestURL());
         System.out.println(req.getContextPath());
         System.out.println(req.getQueryString());
-
+        System.out.println(req.getParameter("name"));
 
 
         System.out.println("-----------------------Receive Servlet starts-------------------------");
