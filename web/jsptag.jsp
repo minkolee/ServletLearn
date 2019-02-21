@@ -21,7 +21,7 @@
 
 <h1>这是动态包含了其他页面的地方</h1>
 
-<jsp:include page="included.jsp" flush="false"/>
+<jsp:include page="included.jsp"/>
 
 
 

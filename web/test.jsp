@@ -5,7 +5,7 @@
   Time: 19:05
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" session="false" %>
 <html>
 <head>
     <title>测试JSP页面</title>
@@ -20,10 +20,12 @@
 </head>
 <body>
 <%
-
-
-
+    request.setAttribute("name","jenny");
 %>
+
+
+
+<jsp:forward page="index.jsp" />
 
 <%!
     private int getRand100() {

@@ -80,15 +80,15 @@
         <!--<url-pattern>/redirect</url-pattern>-->
     <!--</servlet-mapping>-->
 
-    <servlet>
-        <servlet-name>receive</servlet-name>
-        <servlet-class>requestlearn.Receive</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>receive</servlet-name>-->
+        <!--<servlet-class>requestlearn.Receive</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>receive</servlet-name>
-        <url-pattern>/receive</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>receive</servlet-name>-->
+        <!--<url-pattern>/receive</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <!--<servlet>-->
         <!--<servlet-name>register</servlet-name>-->
@@ -102,15 +102,15 @@
 
 
     <!--Cookie的使用-->
-    <servlet>
-        <servlet-name>cookie</servlet-name>
-        <servlet-class>CookieLearn.CookieDemo</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>cookie</servlet-name>-->
+        <!--<servlet-class>CookieLearn.CookieDemo</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>cookie</servlet-name>
-        <url-pattern>/cook</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>cookie</servlet-name>-->
+        <!--<url-pattern>/cook</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <!--<servlet>-->
         <!--<servlet-name>session</servlet-name>-->
@@ -133,8 +133,18 @@
     <!--</servlet-mapping>-->
 
     <!--这个表示session的过期时间,用分钟表示session的过期时间-->
-    <session-config>
-        <session-timeout>60</session-timeout>
-    </session-config>
+    <!--<session-config>-->
+        <!--<session-timeout>60</session-timeout>-->
+    <!--</session-config>-->
+
+    <servlet>
+        <servlet-name>goods</servlet-name>
+        <servlet-class>itemlist.ListQuery</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>goods</servlet-name>
+        <url-pattern>/goods</url-pattern>
+    </servlet-mapping>
 
 </web-app>

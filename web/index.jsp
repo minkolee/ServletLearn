@@ -27,5 +27,8 @@
       <input type="submit">
     </form>
   </div>
+
+  <%=request.getAttribute("name")%>
+
   </body>
 </html>
