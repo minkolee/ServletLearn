@@ -137,25 +137,37 @@
         <!--<session-timeout>60</session-timeout>-->
     <!--</session-config>-->
 
+    <!--<servlet>-->
+        <!--<servlet-name>goods</servlet-name>-->
+        <!--<servlet-class>itemlist.ListQuery</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>goods</servlet-name>-->
+        <!--<url-pattern>/goods</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>elgoods</servlet-name>-->
+        <!--<servlet-class>itemlist.ListQueryEL</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>elgoods</servlet-name>-->
+        <!--<url-pattern>/elgoods</url-pattern>-->
+    <!--</servlet-mapping>-->
+
     <servlet>
-        <servlet-name>goods</servlet-name>
-        <servlet-class>itemlist.ListQuery</servlet-class>
+    <servlet-name>jstl</servlet-name>
+    <servlet-class>itemlist.JSTLDemo</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>goods</servlet-name>
-        <url-pattern>/goods</url-pattern>
+    <servlet-name>jstl</servlet-name>
+    <url-pattern>/jstl</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>elgoods</servlet-name>
-        <servlet-class>itemlist.ListQueryEL</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>elgoods</servlet-name>
-        <url-pattern>/elgoods</url-pattern>
-    </servlet-mapping>
 
 
 </web-app>

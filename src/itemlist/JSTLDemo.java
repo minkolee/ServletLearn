@@ -12,13 +12,15 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * EL表达式,用于在JSP中取值,嵌入到JSP页面的内部,以尽可能少的编写Java代码
+ * 使用JSTL的时候需要先导包
+ * 也是由apache提供的JSTL
  *
- * JSTL 目前基本使用的就是核心库 JSTL+EL的想法是完全代替页面内的JSP代码,用于获取数据和进行逻辑判断
+ *
+ *
+ *
  */
 
-
-public class ListQueryEL extends HttpServlet {
+public class JSTLDemo extends HttpServlet {
     //servlet初始化的时候设置好连接池
 
     private static BasicDataSource source = new BasicDataSource();
@@ -31,22 +33,16 @@ public class ListQueryEL extends HttpServlet {
         source.setPassword("fflym0709");
     }
 
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 在请求上设置查询结果
         resp.setContentType("text/html;charset=UTF-8");
 
         // 多设置几种东西传给下一个
-        req.setAttribute("attr1","saner");
-        Product product = queryAll().get(0);
-
-        req.setAttribute("single", product);
 
         req.setAttribute("products", queryAll());
         // 转发请求给JSP
-        req.getRequestDispatcher("/listel.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jstl.jsp").forward(req, resp);
 
 
     }
@@ -56,19 +52,17 @@ public class ListQueryEL extends HttpServlet {
     }
 
 
-    //
-    private List<Product> queryAll() {
+    private List<Good> queryAll() {
         try {
-            String queryAll = "SELECT * FROM product ORDER BY market_price";
+            String queryAll = "SELECT * FROM goods";
             QueryRunner queryRunner = new QueryRunner(source);
-            return queryRunner.query(queryAll, new BeanListHandler<Product>(Product.class));
+            return queryRunner.query(queryAll, new BeanListHandler<Good>(Good.class));
         } catch (Exception ex) {
             ex.printStackTrace();
             throw new RuntimeException(ex);
         }
 
     }
-
 
 
 }
