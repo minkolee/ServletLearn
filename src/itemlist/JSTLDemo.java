@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.util.*;
 
 /**
  * 使用JSTL的时候需要先导包
@@ -39,8 +39,49 @@ public class JSTLDemo extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
 
         // 多设置几种东西传给下一个
-
+        // 传对象列表
         req.setAttribute("products", queryAll());
+        // 传单个对象
+        req.setAttribute("product",queryAll().get(0));
+
+        //传复杂数据结构
+
+        Product product1 = new Product();
+        product1.setCid("3");
+        product1.setIs_hot(11);
+        product1.setMarket_price(999);
+        product1.setShop_price(66);
+        product1.setPid("32");
+
+        Product product2 = new Product();
+        product2.setCid("6");
+        product2.setIs_hot(22);
+        product2.setMarket_price(123999);
+        product2.setShop_price(33);
+        product2.setPid("58");
+
+
+
+        HashMap<String, Product> innermap = new HashMap<>();
+
+        innermap.put("product1", product1);
+        innermap.put("product2", product2);
+
+        HashMap<Product, HashMap<String, Product>> map = new HashMap<>();
+
+        map.put(product1, innermap);
+
+        req.setAttribute("complex", map);
+
+        // 遍历一下复杂对象看看
+//        for (HashMap.Entry<Product,HashMap<String,Product>> entry : map.entrySet()) {
+//            HashMap<String, Product> map2 = entry.getValue();
+//            for (HashMap.Entry<String, Product> entry1 : map2.entrySet()) {
+//                System.out.println(entry1.getKey());
+//                System.out.println(entry1.getValue());
+//            }
+//        }
+
         // 转发请求给JSP
         req.getRequestDispatcher("/jstl.jsp").forward(req, resp);
 
