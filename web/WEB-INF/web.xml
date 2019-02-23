@@ -157,17 +157,28 @@
         <!--<url-pattern>/elgoods</url-pattern>-->
     <!--</servlet-mapping>-->
 
+    <!--JSTL学习-->
+    <!--<servlet>-->
+    <!--<servlet-name>jstl</servlet-name>-->
+    <!--<servlet-class>itemlist.JSTLDemo</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+    <!--<servlet-name>jstl</servlet-name>-->
+    <!--<url-pattern>/jstl</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+    <!--MySQL事务的方法-->
     <servlet>
-    <servlet-name>jstl</servlet-name>
-    <servlet-class>itemlist.JSTLDemo</servlet-class>
+        <servlet-name>trans</servlet-name>
+        <servlet-class>transaction.AccountServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-    <servlet-name>jstl</servlet-name>
-    <url-pattern>/jstl</url-pattern>
+        <servlet-name>trans</servlet-name>
+        <url-pattern>/trans</url-pattern>
     </servlet-mapping>
-
-
 
 
 </web-app>
