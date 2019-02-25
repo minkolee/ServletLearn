@@ -180,5 +180,16 @@
         <url-pattern>/trans</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ajax</servlet-name>
+        <servlet-class>ajaxlearn.MyAjax</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ajax</servlet-name>
+        <url-pattern>/ajaxhello</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
