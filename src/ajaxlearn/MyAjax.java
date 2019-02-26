@@ -17,9 +17,9 @@ public class MyAjax extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String user =(String)  req.getParameter("username");
-        String pwd= (String)  req.getParameter("password");
-        String email =(String)  req.getParameter("email");
+        String user = req.getParameter("username");
+        String pwd = req.getParameter("password");
+        String email = req.getParameter("email");
         System.out.println(user);
         System.out.println(pwd);
         System.out.println(email);
