@@ -25,8 +25,13 @@
         <!--<listener-class>listeners.MySessionListener</listener-class>-->
     <!--</listener>-->
     <!--监听器-->
+    <!--<listener>-->
+        <!--<listener-class>listeners.MyRequestListener</listener-class>-->
+    <!--</listener>-->
+
+    <!--属性监听器-->
     <listener>
-        <listener-class>listeners.MyRequestListener</listener-class>
+    <listener-class>listeners.MyServletContextAttrListener</listener-class>
     </listener>
 
     <!--<servlet>-->
@@ -204,6 +209,14 @@
         <url-pattern>/ajaxhello</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>listen</servlet-name>
+        <servlet-class>listeners.Test</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>listen</servlet-name>
+        <url-pattern>/listen</url-pattern>
+    </servlet-mapping>
 
 </web-app>

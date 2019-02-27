@@ -53,7 +53,7 @@ public class Demo extends HttpServlet {
 
 
 
-//        resp.setContentType("text/html;charset=UTF-8");
+        resp.setContentType("text/html;charset=UTF-8");
         //这是字符流,还一个字节流,但是注意,一个请求的输出IO流只能被调用一次,也就是说可以反复调用字节流或者字符流的write,但不能先调用字节流的write再调用字符流的write
 //        resp.getWriter().write("生化危机2 RE 专家模式还是不容易的");
 //        resp.getOutputStream().write(67);
