@@ -37,6 +37,7 @@ public class Test extends HttpServlet {
         // session 存取数据的监听
         User user = new User("jenny");
         HttpSession hs = req.getSession();
+        hs.removeAttribute("name2");
         hs.setAttribute("name", user);
         resp.getWriter().write("session设置了name=jenny");
 
