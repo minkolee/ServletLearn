@@ -34,6 +34,7 @@
     <listener-class>listeners.MyServletContextAttrListener</listener-class>
     </listener>
 
+
     <!--<servlet>-->
     <!--<servlet-name>firstcontact</servlet-name>-->
     <!--<servlet-class>Base.LoginCountUseServletContext</servlet-class>-->
@@ -217,6 +218,16 @@
     <servlet-mapping>
         <servlet-name>listen</servlet-name>
         <url-pattern>/listen</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>unbound</servlet-name>
+        <servlet-class>listeners.Test2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>unbound</servlet-name>
+        <url-pattern>/unbound</url-pattern>
     </servlet-mapping>
 
 </web-app>

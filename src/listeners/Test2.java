@@ -1,6 +1,5 @@
 package listeners;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class Test extends HttpServlet {
+public class Test2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
@@ -35,10 +34,9 @@ public class Test extends HttpServlet {
 //        }
 
         // session 存取数据的监听
-        User user = new User("jenny");
         HttpSession hs = req.getSession();
-        hs.setAttribute("name", user);
-        resp.getWriter().write("session设置了name=jenny");
+        hs.removeAttribute("name");
+        resp.getWriter().write("session删除了name=jenny");
 
     }
 

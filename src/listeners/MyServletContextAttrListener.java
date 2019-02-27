@@ -2,6 +2,8 @@ package listeners;
 
 import javax.servlet.ServletContextAttributeEvent;
 import javax.servlet.ServletContextAttributeListener;
+import javax.servlet.http.HttpSessionAttributeListener;
+import javax.servlet.http.HttpSessionBindingEvent;
 
 public class MyServletContextAttrListener implements ServletContextAttributeListener {
     @Override
@@ -26,3 +28,5 @@ public class MyServletContextAttrListener implements ServletContextAttributeList
         System.out.println("-----" + scae.getName() + " | " + scae.getServletContext().getAttribute(scae.getName()));
     }
 }
+
+
