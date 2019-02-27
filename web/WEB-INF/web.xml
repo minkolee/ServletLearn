@@ -14,7 +14,11 @@
         <param-value>jenny</param-value>
     </context-param>
     <!--这是登录功能-->
-
+    <listener>
+        <listener-class>listeners.MySCListener</listener-class>
+    </listener>
+    
+    
     <!--<servlet>-->
     <!--<servlet-name>firstcontact</servlet-name>-->
     <!--<servlet-class>Base.LoginCountUseServletContext</servlet-class>-->
