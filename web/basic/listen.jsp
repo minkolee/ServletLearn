@@ -23,7 +23,7 @@
 </head>
 <body>
 <h1>测试监听器</h1>
-
+<p><%=request.getAttribute("name")%></p>
 
 </body>
 </html>

@@ -14,11 +14,21 @@
         <param-value>jenny</param-value>
     </context-param>
     <!--这是登录功能-->
+
+
+    <!--监听器-->
+    <!--<listener>-->
+        <!--<listener-class>listeners.MySCListener</listener-class>-->
+    <!--</listener>-->
+    <!--监听器-->
+    <!--<listener>-->
+        <!--<listener-class>listeners.MySessionListener</listener-class>-->
+    <!--</listener>-->
+    <!--监听器-->
     <listener>
-        <listener-class>listeners.MySCListener</listener-class>
+        <listener-class>listeners.MyRequestListener</listener-class>
     </listener>
-    
-    
+
     <!--<servlet>-->
     <!--<servlet-name>firstcontact</servlet-name>-->
     <!--<servlet-class>Base.LoginCountUseServletContext</servlet-class>-->

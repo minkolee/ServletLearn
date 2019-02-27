@@ -23,6 +23,8 @@
 <button id="ajax2">发送AJAX POST请求</button>
 
 <p id="result"></p>
+<p><%=request.getAttribute("name")%></p>
+
 
 
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
