@@ -14,6 +14,9 @@ public class TestFilter extends HttpServlet {
 
         System.out.println("Get方法执行了");
         String s = (String) req.getAttribute("name");
+        if (s == null) {
+            s = "没取到";
+        }
         resp.getWriter().write(s);
 
     }
