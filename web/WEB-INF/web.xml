@@ -30,10 +30,11 @@
     <!--</listener>-->
 
     <!--属性监听器-->
-    <listener>
-    <listener-class>listeners.MyServletContextAttrListener</listener-class>
-    </listener>
+    <!--<listener>-->
+    <!--<listener-class>listeners.MyServletContextAttrListener</listener-class>-->
+    <!--</listener>-->
 
+    <!--session对象监视器, 无需配置-->
 
     <!--<servlet>-->
     <!--<servlet-name>firstcontact</servlet-name>-->
@@ -190,44 +191,64 @@
 
 
     <!--MySQL事务的方法-->
+    <!--<servlet>-->
+        <!--<servlet-name>trans</servlet-name>-->
+        <!--<servlet-class>transaction.AccountServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>trans</servlet-name>-->
+        <!--<url-pattern>/trans</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>ajax</servlet-name>-->
+        <!--<servlet-class>ajaxlearn.MyAjax</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>ajax</servlet-name>-->
+        <!--<url-pattern>/ajaxhello</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>listen</servlet-name>-->
+        <!--<servlet-class>listeners.Test</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>listen</servlet-name>-->
+        <!--<url-pattern>/listen</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>unbound</servlet-name>-->
+        <!--<servlet-class>listeners.Test2</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>unbound</servlet-name>-->
+        <!--<url-pattern>/unbound</url-pattern>-->
+    <!--</servlet-mapping>-->
+
     <servlet>
-        <servlet-name>trans</servlet-name>
-        <servlet-class>transaction.AccountServlet</servlet-class>
+        <servlet-name>filter</servlet-name>
+        <servlet-class>filters.TestFilter</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>trans</servlet-name>
-        <url-pattern>/trans</url-pattern>
+        <servlet-name>filter</servlet-name>
+        <url-pattern>/filter</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>ajax</servlet-name>
-        <servlet-class>ajaxlearn.MyAjax</servlet-class>
-    </servlet>
+    <filter>
+        <filter-name>filt</filter-name>
+        <filter-class>filters.MyFilter</filter-class>
+    </filter>
 
-    <servlet-mapping>
-        <servlet-name>ajax</servlet-name>
-        <url-pattern>/ajaxhello</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>listen</servlet-name>
-        <servlet-class>listeners.Test</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>listen</servlet-name>
-        <url-pattern>/listen</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>unbound</servlet-name>
-        <servlet-class>listeners.Test2</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>unbound</servlet-name>
-        <url-pattern>/unbound</url-pattern>
-    </servlet-mapping>
+    <filter-mapping>
+        <filter-name>filt</filter-name>
+        <url-pattern>/filter</url-pattern>
+    </filter-mapping>
 
 </web-app>

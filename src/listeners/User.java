@@ -8,13 +8,17 @@ public class User implements HttpSessionBindingListener {
 
     @Override
     public void valueBound(HttpSessionBindingEvent event) {
-        System.out.println("被绑定了");
-
+        System.out.println("--------------被绑定了------------------");
+        System.out.println(event.getName());
+        System.out.println(event.getValue());
     }
 
     @Override
     public void valueUnbound(HttpSessionBindingEvent event) {
-        System.out.println("解绑了");
+        System.out.println("------------------解绑了--------------------");
+        System.out.println(event.getName());
+        System.out.println(event.getValue());
+
     }
 
     User(String name) {
