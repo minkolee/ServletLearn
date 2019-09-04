@@ -4,6 +4,7 @@ import thinkinginjava.learn.chapter06.exercise04.Test;
 import thinkinginjava.learn.chapter06.exercise05.Ex05;
 import thinkinginjava.learn.chapter06.exercise06.Father;
 import thinkinginjava.learn.chapter06.exercise06.Son;
+import thinkinginjava.learn.chapter06.exercise08.ConnectionManager;
 
 public class ExerciseCombine {
 
