@@ -1,6 +1,5 @@
 package thinkinginjava.learn.chapter11;
 
-import thinkinginjava.sep05.A;
 
 import java.util.*;
 
@@ -85,5 +84,7 @@ class Monsters {
     public boolean hasNext() {
         return monsterName.size() != 0;
     }
+
+
 
 }
