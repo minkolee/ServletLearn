@@ -16,7 +16,6 @@ public class Ex04 {
         LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
         TreeSet<String> treeSet = new TreeSet<>();
 
-
         for (int i = 0; i < 60; i++) {
             String name = monsters.next();
             arrayListMonsters.add(name);
@@ -30,6 +29,7 @@ public class Ex04 {
         System.out.println(linkedHashSet);
         System.out.println(treeSet);
 
+        monsters.printAddress();
 
     }
 
@@ -85,6 +85,8 @@ class Monsters {
         return monsterName.size() != 0;
     }
 
-
+    public void printAddress() {
+        System.out.println(super.toString());
+    }
 
 }
