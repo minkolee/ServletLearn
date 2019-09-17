@@ -66,7 +66,7 @@ interface NewInterface {
 }
 
 class Toy {
-//    Toy() {}
+    Toy() {}
 
     Toy(int i) {
 
