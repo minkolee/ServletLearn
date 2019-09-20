@@ -17,7 +17,11 @@ public class StoringData {
         out.writeUTF("Square root of 2");
         out.close();
 
-        DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("target.txt")));
+//        DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("target.txt")));
+
+        DataInputStream in = new DataInputStream(new FileInputStream("target.txt"));
+
+        System.out.println(in.available());
 
         //用相同的顺序, 就可以将数据读出, 这也可以用来序列化
         System.out.println(in.readDouble());

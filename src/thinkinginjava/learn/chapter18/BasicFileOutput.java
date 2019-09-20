@@ -1,5 +1,7 @@
 package thinkinginjava.learn.chapter18;
 
+import ajaxlearn.Print;
+
 import java.io.*;
 
 public class BasicFileOutput {
@@ -12,7 +14,8 @@ public class BasicFileOutput {
 
         //实际上应该使用BufferedWriter去写, 不过PrintWriter进行了装饰, 可以更方便的写
         //PrintWriter有print系列方法,比较方便
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+//        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+        PrintWriter out = new PrintWriter(new File(file).getAbsoluteFile());
 
 //        BufferedWriter out = new BufferedWriter(new FileWriter(file));
 
