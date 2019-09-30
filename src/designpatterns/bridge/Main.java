@@ -11,6 +11,8 @@ public class Main {
 
         //创建一个实现层次的对象
         DisplayImpl textDisplay = new TextFileDisplayImpl("test.html");
+        DisplayImpl decoDisplay = new DecoDisplayImpl('<', '*', '>');
+        DisplayImpl decoDisplay1 = new DecoDisplayImpl('|', '#', '-');
 
         //要使用普通显示功能, 即Display类
 //        Display display = new Display(stringDisplay);
@@ -23,5 +25,11 @@ public class Main {
 
         Display display = new Display(textDisplay);
         display.display();
+
+        DecoDisplay deco = new DecoDisplay(decoDisplay);
+        deco.decoDisplay(4, 1);
+        deco = new DecoDisplay(decoDisplay1);
+        deco.decoDisplay(6, 2);
+
     }
 }
