@@ -1,0 +1,2 @@
+program go right go right go right go right end
+program repeat 4 repeat 3 go end go right end end

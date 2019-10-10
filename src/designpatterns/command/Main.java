@@ -16,6 +16,9 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
     private JButton greenButton = new JButton("GREEN");
     private JButton redButton = new JButton("RED");
 
+    //创建撤销按键
+    private JButton undoButton = new JButton("Undo");
+
     public Main(String title) {
         super(title);
         this.addWindowListener(this);
@@ -26,13 +29,16 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
         greenButton.addActionListener(this);
         redButton.addActionListener(this);
 
+        //为撤销按键添加事件监听
+        undoButton.addActionListener(this);
+
         Box buttonBox = new Box(BoxLayout.X_AXIS);
         buttonBox.add(clearButton);
 
         //添加颜色按钮到界面上
         buttonBox.add(greenButton);
         buttonBox.add(redButton);
-
+        buttonBox.add(undoButton);
 
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
@@ -64,6 +70,26 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
         if (e.getSource() == redButton) {
             canvas.setColor(Color.red);
         }
+
+        //编写撤销按键的事件
+        if (e.getSource() == undoButton) {
+            //弹出历史中的最后一个命令并且绘制底色, 然后恢复原来的颜色
+            Command command = history.pop();
+            if (command != null) {
+                Color color = canvas.getColor();
+                canvas.setColor(Color.white);
+                command.execute();
+                canvas.setColor(color);
+            }
+
+            //获取剩下的宏命令中的最后一个命令, 绘制一次
+            command = history.getLastCommand();
+            if (command != null) {
+                command.execute();
+            }
+        }
+
+
     }
 
     //这个方法处理鼠标拖动的事件

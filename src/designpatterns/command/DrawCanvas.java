@@ -30,4 +30,8 @@ public class DrawCanvas extends Canvas implements Drawable {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    public Color getColor() {
+        return color;
+    }
 }

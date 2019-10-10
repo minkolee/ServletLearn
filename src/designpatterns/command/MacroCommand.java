@@ -40,4 +40,22 @@ public class MacroCommand implements Command {
         }
     }
 
+    //新添加命令, 仅撤销最后一个
+    public Command pop() {
+        if (!commands.isEmpty()) {
+            return commands.pop();
+        } else {
+            return null;
+        }
+    }
+
+    //新添加命令, 获取栈的最后一个元素
+    public Command getLastCommand() {
+        if (!commands.isEmpty()) {
+            return commands.lastElement();
+        } else {
+            return null;
+        }
+    }
+
 }
