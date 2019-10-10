@@ -1,6 +1,7 @@
 package designpatterns.command;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class Main extends JFrame implements ActionListener, MouseMotionListener, WindowListener {
@@ -11,20 +12,37 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
 
     private JButton clearButton = new JButton("CLEAR");
 
+    //新建一个绿色按钮和红色按钮
+    private JButton greenButton = new JButton("GREEN");
+    private JButton redButton = new JButton("RED");
+
     public Main(String title) {
         super(title);
         this.addWindowListener(this);
         canvas.addMouseMotionListener(this);
         clearButton.addActionListener(this);
 
+        //为颜色按钮添加事件监听
+        greenButton.addActionListener(this);
+        redButton.addActionListener(this);
+
         Box buttonBox = new Box(BoxLayout.X_AXIS);
         buttonBox.add(clearButton);
+
+        //添加颜色按钮到界面上
+        buttonBox.add(greenButton);
+        buttonBox.add(redButton);
+
+
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
         mainBox.add(canvas);
         getContentPane().add(mainBox);
         pack();
         show();
+
+
+
     }
 
     //以下是监听事件和鼠标事件的接口方法
@@ -38,6 +56,14 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
             canvas.repaint();
         }
 
+        //为绿色按钮编写事件
+        if (e.getSource() == greenButton) {
+            canvas.setColor(Color.green);
+        }
+        //为红色按钮编写事件
+        if (e.getSource() == redButton) {
+            canvas.setColor(Color.red);
+        }
     }
 
     //这个方法处理鼠标拖动的事件
