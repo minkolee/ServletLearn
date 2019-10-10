@@ -17,6 +17,7 @@ public class Main {
                 Node node = new ProgramNode();
                 node.parse(new Context(text));
                 System.out.println(node);
+                System.out.println("-----------------------------------------------");
             }
         } catch (IOException e) {
             System.out.print("文件读取错误");
@@ -28,6 +29,6 @@ public class Main {
 
 
     public void run(Node node) {
-
+        node.run();
     }
 }

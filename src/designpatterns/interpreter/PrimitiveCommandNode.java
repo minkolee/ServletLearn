@@ -18,4 +18,19 @@ public class PrimitiveCommandNode extends Node {
     public String toString() {
         return name;
     }
+
+    @Override
+    public void run() {
+        switch (name) {
+            case "go":
+                System.out.println("小车前进");
+                break;
+            case "left":
+                System.out.println("小车左转");
+                break;
+            case "right":
+                System.out.println("小车右转");
+                break;
+        }
+    }
 }

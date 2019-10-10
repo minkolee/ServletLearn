@@ -19,4 +19,11 @@ public class RepeatCommandNode extends Node {
     public String toString() {
         return "[repeat " + number + " " + commandListNode + "]";
     }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < number; i++) {
+            commandListNode.run();
+        }
+    }
 }

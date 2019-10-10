@@ -15,4 +15,9 @@ public class ProgramNode extends Node {
     public String toString() {
         return "[Program " + commandListNode + "]";
     }
+
+    @Override
+    public void run() {
+        commandListNode.run();
+    }
 }

@@ -28,9 +28,16 @@ public class CommandListNode extends Node {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[List ");
         for (Node node : list) {
-            stringBuilder.append(node.toString());
+            stringBuilder.append(node.toString()).append(" ");
         }
         stringBuilder.append("]");
         return stringBuilder.toString();
+    }
+
+    @Override
+    public void run() {
+        for (Node node : list) {
+            node.run();
+        }
     }
 }
