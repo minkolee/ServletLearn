@@ -3,6 +3,7 @@ package java8inaction.chapter02;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.function.*;
 
 public class GetContent {
 
@@ -26,6 +27,13 @@ public class GetContent {
         String result2 = getContent("program.txt", bufferedReader -> bufferedReader.readLine());
 
         System.out.println(result2);
+
+
+        String result3 = getContent("program.txt", new ReadFileOneLine());
+
+        System.out.println(result3);
+
     }
 
 }
+
