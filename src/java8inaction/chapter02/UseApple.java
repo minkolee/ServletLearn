@@ -1,5 +1,7 @@
 package java8inaction.chapter02;
 
+import java.util.Comparator;
+
 public class UseApple {
 
     public static void processApple(Apple apple, ConsumeApple consumeApple) {
@@ -11,8 +13,8 @@ public class UseApple {
 
         Apple apple = new Apple();
 
-        processApple(apple, apple1 -> {
-            System.out.println("apple is" + apple);
-        });
+        processApple(apple, System.out::println);
     }
+
+
 }
